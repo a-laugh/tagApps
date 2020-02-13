@@ -1,0 +1,12 @@
+[
+  {
+    "name": "VSCode",
+    "cmd": "C:\\Program Files\\Microsoft VS Code\\Code.exe",
+    "tags": "tool,program,editor"
+  },
+  {
+    "name": "Firefox",
+    "cmd": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+    "tags": "tool,browser"
+  }
+]

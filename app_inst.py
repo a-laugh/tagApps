@@ -1,7 +1,7 @@
 import subprocess
 
 
-class App(object):
+class AppInst(object):
     def __init__(self, name, cmd, tags):
         self.name = name
         self.cmd = cmd
@@ -9,8 +9,3 @@ class App(object):
 
     def run(self):
         subprocess.Popen(self.cmd)
-
-
-if __name__ == '__main__':
-    app = App("VSCode", "C:\\Program Files\\Microsoft VS Code\\Code.exe", "tool,program,editor")
-    app.run()
