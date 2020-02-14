@@ -1,3 +1,5 @@
+# coding: utf-8
+
 import subprocess
 
 
@@ -8,4 +10,4 @@ class AppInst(object):
         self.tags = set(tags.split(','))
 
     def run(self):
-        subprocess.Popen(self.cmd)
+        subprocess.Popen(self.cmd, shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)

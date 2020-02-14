@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# coding: utf-8
 
 import sys
 import json
@@ -18,28 +19,28 @@ class TextUI(object):
             self.app_manager.add_app(app)
 
     def _pretty_list_apps(self, apps):
-        print("============================Apps============================")
+        print("=================================Apps=================================")
         index = 0
         for app in apps:
             index += 1
-            print(app.name, end="\t\t")
+            print("%-15s" % app.name, end="")
             if index % 5 == 0:
                 print()
         if index % 5 != 0:
             print()
-        print("============================================================")
+        print("======================================================================")
 
     def _pretty_list_tags(self, tags):
-        print("============================Tags============================")
+        print("=================================Tags=================================")
         index = 0
         for tag in tags:
             index += 1
-            print(tag, end="\t\t")
+            print("%-15s" % tag, end="")
             if index % 5 == 0:
                 print()
         if index % 5 != 0:
             print()
-        print("============================================================")
+        print("======================================================================")
 
     def cmd_list_apps(self):
         apps = self.app_manager.list_all_apps()
@@ -89,6 +90,10 @@ class TextUI(object):
             cmd_str = input("Please Input Your Cmd: ")
             logging.info(cmd_str)
 
+            cmd_str = cmd_str.strip()
+            if len(cmd_str) == 0:
+                continue
+
             cmd = cmd_str.split(" ", 1)
             if cmd[0] == "list" or cmd[0] == "l":
                 self.cmd_list_apps()
@@ -107,7 +112,7 @@ class TextUI(object):
 
 
 def main(f_apps):
-    with open(f_apps) as fh:
+    with open(f_apps, encoding="utf-8") as fh:
         apps_info = json.load(fh)
         ui = TextUI(apps_info)
         ui.run()

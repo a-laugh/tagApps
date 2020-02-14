@@ -1,12 +1,77 @@
 [
   {
-    "name": "VSCode",
+    "name": "vscode",
     "cmd": "C:\\Program Files\\Microsoft VS Code\\Code.exe",
-    "tags": "tool,program,editor"
+    "tags": "work,program,editor"
   },
   {
-    "name": "Firefox",
+    "name": "firefox",
     "cmd": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
-    "tags": "tool,browser"
+    "tags": "personal,browser"
+  },
+  {
+    "name": "remote",
+    "cmd": "C:\\Program Files (x86)\\vdc\\ientry\\uSmartView.exe",
+    "tags": "work,zte,remote"
+  },
+  {
+    "name": "ebook",
+    "cmd": "C:\\Program Files\\Calibre2\\calibre.exe",
+    "tags": "personal,book"
+  },
+  {
+    "name": "evernote",
+    "cmd": "C:\\Program Files (x86)\\Yinxiang Biji\\Yinxiang Biji\\Evernote.exe",
+    "tags": "personal,note"
+  },
+  {
+    "name": "github",
+    "cmd": "C:\\Users\\Administrator\\AppData\\Local\\GitHubDesktop\\GitHubDesktop.exe",
+    "tags": "work,program,git"
+  },
+  {
+    "name": "lispworks",
+    "cmd": "C:\\Program Files (x86)\\LispWorks Personal\\lispworks-personal-6-1-1-x86-win32.exe",
+    "tags": "work,program,lisp"
+  },
+  {
+    "name": "vbox",
+    "cmd": "C:\\Program Files\\Oracle\\VirtualBox\\VirtualBox.exe",
+    "tags": "work,program,linux"
+  },
+  {
+    "name": "pycharm",
+    "cmd": "C:\\Program Files\\JetBrains\\PyCharm Community Edition 2019.3.3\\bin\\pycharm64.exe",
+    "tags": "work,program,ide,python"
+  },
+  {
+    "name": "scratch",
+    "cmd": "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Scratch Desktop\\Scratch Desktop.exe",
+    "tags": "work,program,child"
+  },
+  {
+    "name": "vs2019",
+    "cmd": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\devenv.exe",
+    "tags": "work,program,ide"
+  },
+  {
+    "name": "wps",
+    "cmd": "C:\\Users\\Administrator\\AppData\\Local\\Kingsoft\\WPS Office\\ksolaunch.exe /prometheus /fromksolaunch /from=startmenu",
+    "tags": "work,office"
+  },
+  {
+    "name": "xmind",
+    "cmd": "C:\\Program Files (x86)\\XMind\\XMind.exe",
+    "tags": "personal,mind"
+  },
+  {
+    "name": "qq",
+    "cmd": "C:\\Program Files (x86)\\Tencent\\QQ\\Bin\\QQScLauncher.exe",
+    "tags": "personal,message"
+  },
+  {
+    "name": "腾讯视频",
+    "cmd": "C:\\Program Files (x86)\\Tencent\\QQLive\\QQLive.exe",
+    "tags": "personal,video"
   }
 ]
