@@ -1,12 +1,30 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
+import os
 import sys
 import json
 import logging
 
 from app_inst import AppInst
 from app_manager import AppManager
+
+_APPS_INFO_EXAMPLE = """
+========================== Apps Info Example ==========================
+[
+    {
+        "name": "app1",
+        "cmd": "cmd1",
+        "tags": "tag0,tag1"
+    },
+    {
+        "name": "app2",
+        "cmd": "cmd2",
+        "tags": "tag0,tag2"
+    }
+]
+=======================================================================
+"""
 
 
 class TextUI(object):
@@ -19,7 +37,7 @@ class TextUI(object):
             self.app_manager.add_app(app)
 
     def _pretty_list_apps(self, apps):
-        print("=================================Apps=================================")
+        print("================================ Apps ================================")
         index = 0
         for app in apps:
             index += 1
@@ -31,7 +49,7 @@ class TextUI(object):
         print("======================================================================")
 
     def _pretty_list_tags(self, tags):
-        print("=================================Tags=================================")
+        print("================================ Tags ================================")
         index = 0
         for tag in tags:
             index += 1
@@ -68,7 +86,11 @@ class TextUI(object):
         name = cmd[1]
         app = self.app_manager.get_app_by_name(name)
         if app is not None:
-            app.run()
+            ret, info = app.run()
+            if ret:
+                print("Run success, wait for a moment!")
+            else:
+                print("Run fail,", info)
         else:
             print("Can not find %s, add it to apps.info first!" % name)
 
@@ -112,6 +134,13 @@ class TextUI(object):
 
 
 def main(f_apps):
+    if not os.path.exists(f_apps):
+        print("Please input your app info in the file: %s" % f_apps)
+        print(_APPS_INFO_EXAMPLE)
+
+        input("Press any key to continue ...")
+        sys.exit(0)
+
     with open(f_apps, encoding="utf-8") as fh:
         apps_info = json.load(fh)
         ui = TextUI(apps_info)
@@ -121,4 +150,5 @@ def main(f_apps):
 if __name__ == '__main__':
     logging.basicConfig(level=logging.WARNING,
                         format="%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s")
+
     main("./apps.info")
