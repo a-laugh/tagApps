@@ -138,7 +138,7 @@ def main(f_apps):
         print("Please input your app info in the file: %s" % f_apps)
         print(_APPS_INFO_EXAMPLE)
 
-        input("Press any key to continue ...")
+        input("Press Enter key to continue ...")
         sys.exit(0)
 
     with open(f_apps, encoding="utf-8") as fh:
